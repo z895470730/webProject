@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="./details.css">
+</head>
+<body>
+    <span>  
+				<div 
+					class="item" 
+					id="l1" 
+					onmousemove="display()"
+					onmouseout="unmount()"
+					onmouseover="getContent(this.id)"
+					>1</div>
+    </span>
+    <span>
+				<div class="item" 
+					id="l2"
+					onmousemove="display()"
+					onmouseout="unmount()"
+					onmouseover="getContent(this.id)"
+					>2</div>
+    </span>
+        <span>
+				<div class="item" 
+					id="l3"
+					onmousemove="display()"
+					onmouseout="unmount()"
+					onmouseover="getContent(this.id)"
+				>3</div>
+    </span>
+    <span>
+				<div 
+					class="item" 
+					id="l4"
+					onmousemove="display()"
+					onmouseout="unmount()"
+					onmouseover="getContent(this.id)"
+				>4</div>
+    </span>
+    <span>
+				<div
+				  class="item"
+					id="l5"
+					onmousemove="display()"
+					onmouseout="unmount()"
+					onmouseover="getContent(this.id)"
+				>5</div>
+    </span>
+    <div id="hover"></div>
+		<script> 			
+			let hover = document.getElementById('hover');	
+			//添加onmousemove监听 实时获取鼠标位置 然后不断修整弹窗位置
+			//通过修改弹窗的display属性来控制该元素是否显示
+			let content = display = (ev) =>{  
+				let oEvent=ev||event;
+				hover.style.display = 'inline-block';
+				hover.style.top = oEvent.clientY+20+'px';
+				hover.style.left = oEvent.clientX+20+'px';				
+			};
+			//当鼠标离开该区域后 将弹窗隐藏
+			//并且把弹窗的文本内容删除
+			const unmount = () =>{
+				hover.style.display = 'none';
+				hover.removeChild(hover.childNodes[0])
+			}
+			//获取调用该方法的id 显示在弹窗
+			const getContent = (id) =>{
+				let text = document.createTextNode(id);
+				hover.append(text);
+			}
+    </script>
+</body>
+</html>

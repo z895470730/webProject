@@ -1,0 +1,31 @@
+.item{
+    width:300px;
+    line-height: 150px;
+    float: left;
+    text-align: center;
+    color: white
+}
+#l1{
+    background: lightblue;
+}
+#l2{
+    background: lightcoral;
+}
+#l3{
+    background: lightgreen
+}
+#l4{
+    background: lightpink;
+}
+#l5{
+    background: lightsalmon;
+}
+#hover{
+    display: none;
+    width: 200px;
+    line-height: 150px;
+    text-align: center;
+    background: lightseagreen;
+    position: fixed;
+    z-index: 999;
+}
