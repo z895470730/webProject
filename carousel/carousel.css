@@ -1,0 +1,61 @@
+.img_list{
+    width: 500px;
+    height: 350px;
+    overflow: hidden;
+    position: relative;
+}
+.img{
+    width: 500px;
+    height: 350px;
+}
+#img1{
+    display: block;
+}
+#img2{
+    display: none;
+}
+#img3{
+    display: none;
+}
+.arrow{
+    position: absolute;
+    top: 110px;
+    z-index: 999;
+    width: 43px;
+    height: 43px;
+    font-size: 36px;
+    font-weight: bold;
+    line-height: 35px;
+    text-align: center;
+    color: grey;
+    background-color: RGBA(0, 0, 0, .3);
+    cursor: pointer;
+    border-radius: 50%;
+}
+#left{
+    left: 10px;
+}
+#right{
+    right: 10px;
+}
+.circle_list{
+    position: absolute;
+    left: 220px;
+    bottom: 20px;
+    z-index: 2;
+    height: 10px;
+    width: 100px;
+}
+.circle{
+    float: left;
+    margin-right: 5px;
+    width: 10px;
+    height: 10px;
+    border: 1px solid gray;
+    border-radius: 50%;
+    background: lightgrey;
+    cursor: pointer;
+}
+#c0{
+    background: lightblue;
+}

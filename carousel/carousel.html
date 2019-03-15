@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="./carousel.css">
+</head>
+<body>
+	<div class="img_list" onmouseover="hover()" onmouseout="leave()">
+		<img src='./1.jpg' class='img' id='img1'/>
+		<img src='./2.jpg' class='img' id='img2'/>
+		<img src='./3.jpg' class='img' id='img3'/>
+		<p class="arrow" id='left' onclick="pre()">&lt</p>
+		<p class="arrow" id='right' onclick="next()">&gt</p>
+		<div class="circle_list">
+			<span class="circle" id='c0' value = '0' onclick='choose(this.id)'></span>
+			<span class="circle" id='c1' value = '1' onclick='choose(this.id)'></span>
+			<span class="circle" id='c2' value = '2' onclick='choose(this.id)'></span>
+		</div>
+	</div>
+	<script>
+		const list = ['img1','img2','img3'];
+		let pointer = 0;
+		let change = (arg) =>{
+			document.getElementById(list[pointer]).style.display = arg;
+			document.getElementById('c'+pointer).style.background = arg === 'none' ? 'gray' : 'lightblue';
+		};
+		const next = () =>{
+			change('none');
+			pointer = pointer < 2 ? pointer + 1 : 0;
+			change('block');
+		};
+		const pre = () =>{
+			change('none');
+			pointer = pointer > 0 ? pointer - 1 : 2;
+			change('block');
+		};
+		const choose = (id) =>{
+			change('none');
+			pointer = Number(document.getElementById(id).getAttribute('value'));
+			change('block');
+		};
+		let action =  window.setInterval(next,3000);
+		const hover = () =>{
+			window.clearInterval(action);
+		};
+		const leave = () =>{
+			action =  window.setInterval(next,3000);
+		};
+		
+	</script>
+</body>
+</html>
