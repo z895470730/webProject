@@ -1,0 +1,30 @@
+.form{
+    float: left;
+    width: 190px;
+}
+.box{
+    border:  1px solid grey;
+    width: 150px;
+    height: 230px;
+    border-radius: 3px;
+    float: left;
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+.box li{
+    list-style: none;
+}
+.btn_list{
+    float: left;
+    line-height: 230px;
+}
+.btn{
+    width: 30px;
+    height: 30px;
+    background:dodgerblue;
+    color: white;
+    font-weight: bold;
+    border:none;
+    border-radius: 4px;
+}

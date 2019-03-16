@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Page Title</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" media="screen" href="./shuttleBox.css">
+</head>
+<body>
+	<ul class="box" id="pre">
+		<li id="one"><input name="animal" type="checkbox" value="dog">dog</li>
+		<li id="two"><input name="animal" type="checkbox" value="cat">cat</li>
+		<li id="three"><input name="animal" type="checkbox" value="bear">bear</li>
+	</ul>
+	<div class="btn_list">
+		<button class="btn" onclick="shuttle()">>></button>
+		<button class="btn" onclick="reverseShuttle()"><<</button>
+	</div>
+	<form class="form">
+		<ul class="box" id = "next">
+			
+		</ul>
+	</form>	
+	<script>
+		let arr =[];
+		for(let i = 0; i < arr.length; i++){
+				next.append(arr[i]);
+			}
+		const shuttle = () =>{
+			const obj = document.getElementsByName("animal");
+			let next = document.getElementById("next");
+			let person = document.getElementById("pre");
+			let arr =[];
+			let i = 0;
+			while(i < obj.length){
+				if(obj[i].checked){
+					obj[i].checked = false;
+					arr.push(obj[i].parentElement);				
+					person.removeChild(obj[i].parentElement);
+				}else{
+					i++;
+				};
+			};
+			for(let i = 0; i < arr.length; i++){
+				next.append(arr[i]);
+			}
+			arr = [];
+			i=0;
+		}
+		const reverseShuttle = () =>{
+			let person = document.getElementById("pre");
+			const obj = document.getElementsByName("animal");
+			let nextPerson = document.getElementById('next');
+			let arr = [];
+			let i = 0;
+			while(i < obj.length){
+				if(obj[i].checked){
+					obj[i].checked = false;	
+					arr.push(obj[i].parentElement);	
+					nextPerson.removeChild(obj[i].parentElement);		
+				}else{
+					i++;
+				};
+				for(let n = 0; n < arr.length; n ++){
+					person.append(arr[n]);
+				};
+			}
+		}
+	</script>
+</body>
+</html>
