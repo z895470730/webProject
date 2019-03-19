@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Page Title</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" media="screen" href="./dragGoods.css">
+</head>
+<body>
+	<div class="item_list">
+		<div 
+			class="item" 
+			id="one" 
+			draggable="true"
+			ondragstart="onDrage(event)"
+			>one</div>
+		<div class="item" id="two" draggable="true">two</div>
+		<div class="item" id="three" draggable="true">three</div>
+	</div>
+	<div ondragover="dropdrop(event)" id="shoppingCart">
+		购物车
+	</div>
+	<script src="./dragGoods.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+.item{
+    display: inline-block;
+    width: 200px;
+    line-height: 150px;
+    text-align: center;
+}
+#one{
+    background: lightblue;
+    position: relative;
+    height: 150;
+    z-index: 999;
+}
+#two{
+    background: lightcoral;
+}
+#three{
+    background: lightgreen;
+}
+#shoppingCart{
+    background: lightgoldenrodyellow;
+    display: inline-block;
+    height: 700px;
+    width: 300px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    border-radius: 8px;
+    box-shadow: 1px 2px 5px gray;
+    text-align: center;
+}
