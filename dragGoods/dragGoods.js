@@ -1,9 +1,13 @@
-console.log(1)
 let node = null;
 const onDrage = (event) =>{
-	node = event.target.cloneNode();
-	console.log(event)
+	event.dataTransfer.setData("Text", event.target.id);
 }
-const dropdrop = (event) =>{
-	event.target.appendChild(node);
+function drop(event) {
+    event.preventDefault();
+	let data = event.dataTransfer.getData("Text");
+	let node = document.getElementById(data).cloneNode(true); 
+    event.target.appendChild(node);
+}
+function allowDrop(event) {
+    event.preventDefault();
 }

@@ -16,7 +16,7 @@
 #three{
     background: lightgreen;
 }
-#shoppingCart{
+.shoppingCart{
     background: lightgoldenrodyellow;
     display: inline-block;
     height: 700px;
