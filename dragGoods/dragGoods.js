@@ -1,6 +1,7 @@
 let node = null;
 const onDrage = (event) =>{
 	event.dataTransfer.setData("Text", event.target.id);
+	console.log(Text)
 }
 function drop(event) {
     event.preventDefault();

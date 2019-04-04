@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>标题</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<style>
+</style>
+</head>
+<body>
+    <button>btn1</button>
+    <button>btn2</button>
+    <button>btn3</button>
+    <button>btn4</button>
+    <button>btn5</button>
+    <script>
+        var list = document.getElementsByTagName('button');
+        // 这里有两个函数，里层的函数为btn添加事件，输出i的值，由于调用btn上的事件时，
+        // 在函数体内调用了i，又因为js中采用的是词法作用域，子函数在自己的函数作用域
+        // 内没有找到i就去定义时的父层函数寻找，父函数被传入了一个i，这个i是独立的，
+        // 与其他函数的i没有任何关系
+        for(var i = 0;i < list.length; i ++){
+            (function(i){
+                list[i].onclick = function(){
+                    console.log(i)
+                }
+            })(i)
+        }
+    </script>
+</body>
+</html>
